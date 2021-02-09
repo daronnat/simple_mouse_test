@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Node2D.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 45.0444
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 17.4834
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 910, 278 )
+script = ExtResource( 2 )
+
+[node name="start" type="Area2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="start"]
+position = Vector2( -1, 0 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="start"]
+shape = SubResource( 1 )
+
+[node name="START" type="Label" parent="start"]
+margin_left = -94.0
+margin_top = 57.0
+margin_right = -55.0
+margin_bottom = 71.0
+rect_scale = Vector2( 2, 2 )
+text = "START"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2D" type="Line2D" parent="start"]
+
+[node name="end" type="Area2D" parent="."]
+position = Vector2( -804, -2 )
+
+[node name="Sprite" type="Sprite" parent="end"]
+self_modulate = Color( 0.584314, 0, 0, 1 )
+position = Vector2( -1, 0 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="end"]
+shape = SubResource( 1 )
+
+[node name="end" type="Label" parent="end"]
+margin_left = -76.0
+margin_top = 52.1224
+margin_right = -46.0
+margin_bottom = 66.1224
+rect_scale = Vector2( 2, 2 )
+text = "END"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = -484.02
+margin_top = -198.638
+margin_right = -399.02
+margin_bottom = -184.638
+rect_scale = Vector2( 2, 2 )
+text = "standing by..."
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mouse_cursor" type="KinematicBody2D" parent="."]
+visible = false
+position = Vector2( -398.135, -197.808 )
+
+[node name="Sprite" type="Sprite" parent="mouse_cursor"]
+modulate = Color( 0, 0.741176, 0.0627451, 1 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mouse_cursor"]
+shape = SubResource( 2 )
+[connection signal="area_entered" from="start" to="." method="_on_start_area_entered"]
+[connection signal="mouse_entered" from="start" to="." method="_on_start_mouse_entered"]
+[connection signal="area_entered" from="end" to="." method="_on_end_area_entered"]
+[connection signal="mouse_exited" from="end" to="." method="_on_end_mouse_exited"]
