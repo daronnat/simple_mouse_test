@@ -3,7 +3,7 @@ This simple Godot project gives different performance metrics about your mouse a
 
 ## Getting Started
 
-To run the project, simply import it using Godot Engine 3.1 (not sure of the compatibility of this project with Godot Engine version >= 3.2).
+To run the project, simply import it using Godot Engine 3.1 (not sure of the compatibility of this project with Godot Engine version >= 3.2). Then run the scene file.
 
 ### Prerequisites
 
@@ -12,8 +12,8 @@ To run the project, simply import it using Godot Engine 3.1 (not sure of the com
 
 ## The output
 
-
-
+Screen-capture of the project while running:
+![mouse_test](https://user-images.githubusercontent.com/32872858/196037484-1c0156bb-7f76-4d4c-bb5c-154b75d5691f.jpg)
 
 ## Built With
 
